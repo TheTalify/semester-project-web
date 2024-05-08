@@ -42,7 +42,7 @@ class Navbar extends React.Component {
                 fill="#CA9352"
               ></path>
             </svg>
-          </a> */}
+          </a>*/}
 
           <a className="navbar-brand" href="#">
             <Logo />

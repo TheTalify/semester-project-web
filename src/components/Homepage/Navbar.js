@@ -3,7 +3,7 @@ import "./navbar.css";
 import Logo from "../../Logo.js";
 
 class Navbar extends React.Component {
-  state = {};
+  state = {}; 
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-mint">

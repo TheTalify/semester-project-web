@@ -1,0 +1,75 @@
+/* General styles */
+.product-description-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    background: white;
+    padding-bottom: 30px;
+    max-width: 800px; /* Set a maximum width */
+    width: 100%; /* Allow the container to take up full width */
+}
+
+.product-description-content {
+    display: flex;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.product-image {
+    flex: 1;
+    padding-right: 70px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #44b09e;
+    cursor: pointer;
+    outline: none;
+}
+
+#quantity {
+    width: 50px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    margin-top: 20px;
+    background-color: #44b09e; /* Change button color */
+    color: white; /* Change text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add rounded edges */
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #368675; /* Darken color on hover */
+}
+
+h1{
+    text-align: center;
+    color: #44b09e;
+}
+
+body{
+    background: #ccc;
+}

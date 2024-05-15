@@ -3,58 +3,69 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../Login/index";
 import Navbar from "./Navbar/Navbar";
 import MainContent from "./MainContent";
-import Hero from './Hero/Hero'
-import Popular from './Popular/Popular'
+import Hero from './Hero/Hero';
+import Popular from './Popular/Popular';
+import './Main.css'; 
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogoutMessage, setShowLogoutMessage] = useState(false);
 
   useEffect(() => {
-    // Check if the user is logged in by verifying the presence of a session token
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // Update the isLoggedIn state based on token presence
+    setIsLoggedIn(!!token);
+
+    // Check if the logout flag is present in localStorage
+    const logoutFlag = localStorage.getItem("logoutFlag");
+    if (logoutFlag === "true") {
+      setShowLogoutMessage(true);
+      // Clear the logout flag after displaying the message
+      localStorage.removeItem("logoutFlag");
+      // Hide the message after some time (e.g., 3 seconds)
+      setTimeout(() => {
+        setShowLogoutMessage(false);
+      }, 3000);
+    }
   }, []);
 
   const handleLogin = (token) => {
-    // Handle login action
     localStorage.setItem("token", token);
-    setIsLoggedIn(true); // Update the isLoggedIn state to true
+    setIsLoggedIn(true);
+    setShowLogoutMessage(false); // Reset the logout message
   };
 
   const handleLogout = () => {
-    // Handle logout action
     localStorage.removeItem("token");
-    setIsLoggedIn(false); // Update the isLoggedIn state to false
+    setIsLoggedIn(false);
+    localStorage.setItem("logoutFlag", "true"); // Set logout flag in localStorage
+    window.location.reload(); // Reload the page after logout
   };
 
   return (
     <>
-      <div>
       <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-      <Hero/>
-      <Popular/>
-    </div>
+      {showLogoutMessage && (
+        <div className="logout-message">
+        You have successfully logged out
+      </div>
+      )}
       <Routes>
-        <Route path="/" element={<MainContent />} />
         <Route
-          path="/login"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/" />
-            ) : (
-              <LoginPage onLogin={handleLogin} />
-            )
-          }
+          path="/"
+          element={<>
+            <Hero />
+            <Popular />
+          </>}
         />
+        {!isLoggedIn && (
+          <Route
+            path="/login"
+            element={<LoginPage onLogin={handleLogin} />}
+          />
+        )}
         <Route
           path="/:userID"
-          element={
-            isLoggedIn ? (
-              <MainContent />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={isLoggedIn ? <MainContent /> : <Navigate to="/login" />}
         />
       </Routes>
     </>

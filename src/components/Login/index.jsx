@@ -21,11 +21,10 @@ const Login = ({ onLogin }) => {
       e.target.querySelector('button[type="submit"]').disabled = true;
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
-      onLogin(res.data); // Call the onLogin function with the token
-      const userId = res.userId; // Get the user ID from the response
+      const userId = res.userId;
       window.location.reload()
+      onLogin(res.data); // Call the onLogin function with the token
       // navigate(`/${userId}`); // Redirect to the unique user page
-      window.location.reload(); // Reload the page after successful login
     } catch (error) {
       if (
         error.response &&

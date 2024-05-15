@@ -9,7 +9,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/*" element={user ? <Main /> : <Navigate replace to="/login" />} />
+		<Route path="/*" element={<Main />} />
+      {/* <Route path="/*" element={user ? <Main /> : <Navigate replace to="/login" />} /> */}
       <Route path="/signup" element={user ? <Navigate replace to="/" /> : <Signup />} />
       <Route path="/login" element={user ? <Navigate replace to="/" /> : <Login />} />
     </Routes>

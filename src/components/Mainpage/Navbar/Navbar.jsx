@@ -23,9 +23,11 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
   return (
     <div className='navbar'>
       <div className='nav-logo'>
-        <img src={logo} alt="" style={{ width: '80px', height: 'auto' }} />
-        <p>PakZone</p>
-      </div>
+                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <img src={logo} alt="" style={{ width: '80px', height: 'auto', display: 'inline-block', marginRight: '5px' }} />
+                    <p style={{ display: 'inline-block', verticalAlign: 'middle' }}>PakZone</p>
+                </Link>
+        </div>
       <ul className="nav-menu">
         <li><Link style={{ textDecoration: 'none' }} to='/'>Home</Link><hr /></li>
         <li><Link style={{ textDecoration: 'none' }} to='/shop'>Shop All</Link><hr /></li>

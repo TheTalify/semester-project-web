@@ -16,6 +16,7 @@ function App() {
       <Route path="/" element={<Main />} />
       <Route path="/signup" element={user ? <Navigate replace to="/" /> : <Signup />} />
       <Route path="/login" element={user ? <Navigate replace to="/" /> : <Login />} />
+	  <Route path="/shop" element={<ProductCatalogue />} />
     </Routes>
   );
 }

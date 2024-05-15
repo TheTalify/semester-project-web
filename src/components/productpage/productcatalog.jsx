@@ -1,5 +1,6 @@
 import React from "react";
 import ProductTile from './producttile'
+import Navbar from '../Mainpage/Navbar/Navbar'
 
 const ProductCatalog = () => {
     const renderTile = () => {
@@ -24,6 +25,7 @@ const ProductCatalog = () => {
 
     return (
         <div>
+            <Navbar />
             <h2 style={{ color: "#44b09e", textAlign: "center" }}>Products</h2>
             <div className="underline" style={{ width: '61px', height: '6px', backgroundColor: '#44b09e', borderRadius: '9px', margin: '0 auto' }}></div>
             {rows}

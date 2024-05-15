@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../Login/index";
-import Navbar from "./Navbar/navbar";
+import Navbar from "./Navbar/Navbar";
 import MainContent from "./MainContent";
+import Hero from './Hero/Hero'
+import Popular from './Popular/Popular'
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,7 +29,11 @@ const Main = () => {
 
   return (
     <>
+      <div>
       <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Hero/>
+      <Popular/>
+    </div>
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route

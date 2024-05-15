@@ -1,62 +1,34 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-
-const Navbar = ({ isLoggedIn, onLogout }) => {
+import React, { useState } from 'react'
+import './Navbar.css'
+import logo from '../../Assets/logo.png'
+import cart_icon from '../../Assets/cart_icon.png'
+import user from '../../Assets/user.png'
+import { Link } from 'react-router-dom'
+const Navbar = () => {
+    const [menu, setMenu] = useState("shop");
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-mint">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          PakZone
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/" end>
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/products">
-                Products
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-          <div className="d-flex">
-            {!isLoggedIn ? (
-              <NavLink className="btn btn-light mx-2" to="/login">
-                Login
-              </NavLink>
-            ) : (
-              <button className="btn btn-light mx-2" onClick={onLogout}>
-                Logout
-              </button>
-            )}
-          </div>
+    <div className='navbar'>
+        <div className='nav-logo'>
+            <img src={logo} alt="" style={{ width: '80px', height: 'auto' }} />
+            <p>PakZone</p>
         </div>
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+        <ul className="nav-menu">
+        {/* <li onClick={()=>{setMenu("shop")}}><Link style={{textDecoration: 'none'}} to='/shop'>Shop All</Link>{menu==="shop"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("artisans")}}><Link style={{textDecoration: 'none'}} to='artisans'>Artisans</Link>{menu==="artisans"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("home")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="home"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("kuchOr")}}><Link style={{textDecoration: 'none'}} to='kuchOr'>KuchOr</Link>{menu==="kuchOr"?<hr/>:<></>}</li> */}
+        <li><Link style={{ textDecoration: 'none' }} to='/shop'>Shop All</Link><hr /></li>
+        <li><Link style={{ textDecoration: 'none' }} to='/artisans'>Artisans</Link><hr /></li>
+        <li><Link style={{ textDecoration: 'none' }} to='/'>Home</Link><hr /></li>
+        <li><Link style={{ textDecoration: 'none' }} to='/kuchOr'>KuchOr</Link><hr /></li>
+        </ul>
+        <div className="nav-login-cart">
+            {/* <button>Login</button> */}
+            <Link to='loginSignup'><img src={user} alt="" style={{ width: '28px', height: 'auto' }} /></Link>
+            <Link to='/cart'><img src={cart_icon} alt="" style={{ width: '28px', height: 'auto' }} /></Link>
+            <div className="nav-cart-count">0</div>
+        </div>
+    </div>
+  )
+}
+export default Navbar

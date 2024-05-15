@@ -12,4 +12,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent
+export default MainContent;

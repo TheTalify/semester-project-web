@@ -14,6 +14,6 @@ function App() {
 			<Route path="/" element={<Navigate replace to="/login" />} />
 		</Routes>
   );
-}g
+}
 
 export default App;

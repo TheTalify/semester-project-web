@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Homepage/Navbar";
 import './addproduct.css';
 
 const AddProductPage = () => {
@@ -48,7 +47,6 @@ const AddProductPage = () => {
 
     return (
         <div>
-            <Navbar />
             <header>
                 <h2>Add New Product</h2>
                 <div className="underline"></div>

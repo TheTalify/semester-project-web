@@ -5,6 +5,7 @@ import Navbar from "../Mainpage/Navbar/Navbar";
 const ErrorPage = () => {
   const { userID } = useParams();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogoutMessage, setShowLogoutMessage] = useState(false);
 
   useEffect(() => {
     // Check if the user is logged in by verifying the presence of a session token
@@ -23,7 +24,7 @@ const ErrorPage = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false); // Update the isLoggedIn state to false
   };
-
+  
   return (
     <>
       <div>

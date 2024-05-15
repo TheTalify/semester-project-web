@@ -22,7 +22,7 @@ const AddProductPage = () => {
     const handleProductImageChange = (e) => {
         const file = e.target.files[0];
         setProductImage(file);
-    };
+    };  
 
     const handleSubmit = (e) => {
         e.preventDefault();

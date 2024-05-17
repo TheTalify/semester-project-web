@@ -38,7 +38,11 @@ const ProductCatalog = () => {
         const rowTiles = currentTiles.slice(i, i + 4);
         rows.push(
             <div className="row" key={i}>
-                {rowTiles}
+                {rowTiles.map((tile, index) => (
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
+                        {tile}
+                    </div>
+                ))}
             </div>
         );
     }
@@ -86,7 +90,9 @@ const ProductCatalog = () => {
             <h2 style={{ color: "#44b09e", textAlign: "center" }}>Products</h2>
             <div className="underline" style={{ width: '61px', height: '6px', backgroundColor: '#44b09e', borderRadius: '9px', margin: '0 auto' }}></div>
             <br/>
-            {rows}
+            <div className="container">
+                {rows}
+            </div>
             <div className="pagination">
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button

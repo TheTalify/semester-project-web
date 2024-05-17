@@ -1,0 +1,140 @@
+/* General Title Styling */
+.title {
+    font-size: 500px;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* General Card Styling */
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px; /* Add margin between cards */
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+/* Product Card Specific Styling */
+.product-card {
+    width: 250px; /* Adjust width to make the card smaller */
+    padding: 10px; /* Adjust padding as needed */
+    margin: 0 auto; /* Center the card */
+}
+
+.product-card .card-img-top {
+    height: 150px; /* Adjust height to make the image smaller */
+    object-fit: cover; /* Ensure the image fits within the specified height */
+}
+
+.product-card .card-body {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.product-card .card-title {
+    font-size: 1rem; /* Adjust font size for smaller title */
+    margin-bottom: 0.5rem; /* Adjust margin as needed */
+}
+
+.product-card .card-text {
+    font-size: 0.9rem; /* Adjust font size for smaller text */
+    margin-bottom: 0.5rem; /* Adjust margin as needed */
+}
+
+.product-card .btn {
+    padding: 5px 10px; /* Adjust padding for smaller button */
+    font-size: 0.9rem; /* Adjust font size for smaller button text */
+    background-color: #44B09E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #388f7a; /* Darker shade on hover */
+}
+
+/* Search Bar and Filter Styling */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.filter-dropdown, .search-bar {
+    padding: 5px;
+    border: 2px solid #44b09e;
+    border-radius: 5px;
+    color: #44b09e;
+}
+
+.filter-dropdown:focus, .search-bar:focus {
+    outline: none;
+    border-color: #44b09e;
+}
+
+.filter-dropdown {
+    background-color: white;
+    margin-right: auto; /* Aligns filter dropdown to the left */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    margin-left: 10px; /* Adds spacing between filter and search bar */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-button {
+    padding: 5px 10px;
+    background-color: #44b09e;
+    border: 2px solid #44b09e;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #388f7a; /* Darker shade on hover */
+    border-color: #388f7a;
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 2px solid #44b09e;
+    border-radius: 5px;
+    background-color: white;
+    color: #44b09e;
+    cursor: pointer;
+}
+
+.page-button:hover {
+    background-color: #44b09e;
+    color: white;
+}
+
+.page-button.active {
+    background-color: #44b09e;
+    color: white;
+}

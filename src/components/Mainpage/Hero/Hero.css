@@ -12,12 +12,18 @@
     padding-left: 100px;
     line-height: 1.1;
 }
-.hero-left h2{
+/* .hero-left h2{
+    color: #090909;
+    font-size: 20px;
+    font-weight: 600;  
+} */
+.hero-left .shopLocal p{
     color: #090909;
     font-size: 20px;
     font-weight: 600;
+    
 }
-.hero-left p{
+.hero-left .explore p{
     color: #171717;
     font-size: 60px;
     font-weight: 700;

@@ -36,7 +36,7 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
       </ul>
       <div className="nav-login-cart">
         {isLoggedIn ? (
-          <img src={logout} alt="" style={{ width: '28px', height: 'auto', cursor: 'pointer' }} onClick={handleButtonClick} />
+          <img src={logout} alt="" style={{ width: '28px', height: 'auto', cursor: 'pointer'}} onClick={handleButtonClick} />
         ) : (
           <img src={user} alt="" style={{ width: '28px', height: 'auto', cursor: 'pointer' }} onClick={handleButtonClick} />
         )}

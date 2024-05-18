@@ -6,12 +6,13 @@ const Hero = () => {
   return (
     <div className='hero'>
       <div className="hero-left">
-        <h2>Shop local, feel global</h2>
-        <div>
+        <div className='shopLocal'><p>Shop local, feel global</p></div>
+        {/* <h2>Shop local, feel global</h2> */}
+        <div className='explore'>
           <p>Explore our collection<br/>and embrace the power<br/> of authenticity.</p>
         </div>
         <div className="hero-latest-btn">
-          <div>Latest Collection</div>
+          <div>Become Partner</div>
           <img src={arrow_icon} alt=""style={{ width: '28px', height: 'auto' }} />
         </div>
       </div>

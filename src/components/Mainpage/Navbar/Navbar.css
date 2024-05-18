@@ -3,6 +3,7 @@
     justify-content: space-around;
     padding: 0px 16px 0;
     box-shadow: 0 1px 3px -2px black;
+    background-color: mintcream;
 }
 .nav-logo p:hover {
     animation: shine 1.5s infinite;
@@ -119,4 +120,13 @@
     font-size: 12px;
     background: red;
     color: white;
+}
+.nav-login-cart img {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition for both transform and filter properties */
+    filter: invert(50%);
+}
+
+.nav-login-cart img:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+    filter: invert(20%);   /* Change the filter on hover */
 }

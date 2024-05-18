@@ -6,18 +6,21 @@ import Login from './components/Login';
 import AddProduct from './components/AddProductpage/AddProduct';
 import ProductCatalogue from './components/productpage/productcatalog';
 import ErrorPage from './components/ErrorPage/ErrorPage';
-
+import Footer from './components/Mainpage/Footer/Footer';
 function App() {
   const user = localStorage.getItem('token');
 
   return (
-    <Routes>
+    <div>
+		<Routes>
 	  <Route path="/*" element={<ErrorPage />} />
       <Route path="/" element={<Main />} />
       <Route path="/signup" element={user ? <Navigate replace to="/" /> : <Signup />} />
       <Route path="/login" element={user ? <Navigate replace to="/" /> : <Login />} />
 	  <Route path="/shop" element={<ProductCatalogue />} />
     </Routes>
+	<Footer/>
+	</div>
   );
 }
 

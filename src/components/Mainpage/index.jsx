@@ -6,6 +6,7 @@ import MainContent from "./MainContent";
 import Hero from './Hero/Hero';
 import Popular from './Popular/Popular';
 import './Main.css'; 
+import ProductCatalog from "../productpage/productcatalog";
 
 const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -66,6 +67,10 @@ const Main = () => {
         <Route
           path="/:userID"
           element={isLoggedIn ? <MainContent /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/Shop"
+          element={<ProductCatalog isLoggedIn={isLoggedIn} />}
         />
       </Routes>
     </>

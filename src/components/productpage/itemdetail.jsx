@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Logo from "./images/products.png";
 import "./itemdetail.css";
-import Navbar from "../Homepage/Navbar";
+import Navbar from "../Mainpage/Navbar/Navbar";
 
 const ProductDescription = () => {
     const [quantity, setQuantity] = useState(1);
+    const [reviews, setReviews] = useState([
+        { id: 1, name: "John Doe", content: "Great product! Really helped me track my fitness goals." },
+        { id: 2, name: "Jane Smith", content: "Good value for the price. The sleep monitoring feature is very accurate." }
+    ]);
+    const [newReview, setNewReview] = useState({ name: "", content: "" });
 
     const decrementQuantity = () => {
         setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
@@ -14,10 +19,29 @@ const ProductDescription = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 
+    const handleReviewChange = (e) => {
+        const { name, value } = e.target;
+        setNewReview(prevReview => ({
+            ...prevReview,
+            [name]: value
+        }));
+    };
+
+    const addReview = () => {
+        if (newReview.name && newReview.content) {
+            setReviews(prevReviews => [
+                ...prevReviews,
+                { id: prevReviews.length + 1, name: newReview.name, content: newReview.content }
+            ]);
+            setNewReview({ name: "", content: "" });
+        }
+    };
+
     return (
         <>
             <header>
                 <Navbar />
+                <br/>
                 <h1>Product Description</h1>
                 <div className="underline" style={{ width: '61px', height: '6px', backgroundColor: '#44b09e', borderRadius: '9px', margin: '0 auto' }}></div>
             </header>
@@ -57,6 +81,35 @@ const ProductDescription = () => {
                         {/* Add to cart button */}
                         <button className="add-to-cart-btn">Add to Cart</button>
                     </div>
+                </div>
+            </div>
+            {/* Reviews section */}
+            <div className="reviews-section">
+                <h2>Customer Reviews</h2>
+                <div className="reviews-list">
+                    {reviews.map(review => (
+                        <div key={review.id} className="review-item">
+                            <h4>{review.name}</h4>
+                            <p>{review.content}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className="add-review">
+                    <h3>Add a Review</h3>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        value={newReview.name}
+                        onChange={handleReviewChange}
+                    />
+                    <textarea
+                        name="content"
+                        placeholder="Your review"
+                        value={newReview.content}
+                        onChange={handleReviewChange}
+                    ></textarea>
+                    <button className="add-review-btn" onClick={addReview}>Submit Review</button>
                 </div>
             </div>
         </>

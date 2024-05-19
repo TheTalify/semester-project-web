@@ -6,13 +6,13 @@ import App from './App';
 import Main from './components/Mainpage';
 import ProductCatalogue from './components/productpage/productcatalog'
 import AddProduct from './components/AddProductpage/AddProduct'
-
+import ProductDescription from './components/productpage/itemdetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+    <App/>
     </BrowserRouter>
   </React.StrictMode>
 );

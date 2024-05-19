@@ -4,7 +4,7 @@
     flex-direction: column;
     margin: auto;
     margin-top: 100px;
-    background: white;
+    background: #f9f9f9;
     padding-bottom: 30px;
     max-width: 800px; /* Set a maximum width */
     width: 100%; /* Allow the container to take up full width */
@@ -42,8 +42,12 @@
     height: 30px;
     border: 1px solid #ccc;
     background-color: #44b09e;
+    color: white;
     cursor: pointer;
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #quantity {
@@ -65,11 +69,88 @@
     background-color: #368675; /* Darken color on hover */
 }
 
-h1{
+h1 {
     text-align: center;
     color: #44b09e;
 }
 
-body{
-    background: #ccc;
+/* Reviews section styles */
+.reviews-section {
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    max-width: 800px; /* Set a maximum width */
+    width: 100%; /* Allow the section to take up full width */
+}
+
+.reviews-section h2 {
+    color: #44b09e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reviews-list {
+    margin-bottom: 20px;
+}
+
+.review-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.review-item h4 {
+    margin: 0;
+    color: #333;
+}
+
+.review-item p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+.add-review {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-review h3 {
+    margin-top: 0;
+    color: #44b09e;
+    text-align: center;
+}
+
+.add-review input,
+.add-review textarea {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-review textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.add-review-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #44b09e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-review-btn:hover {
+    background-color: #368675;
 }
